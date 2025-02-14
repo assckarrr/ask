@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, <%- user.name %>!</h1>
+    <p>Your email: <%- user.email %></p>
+    <a href="/logout">Logout</a>
+
+    <!-- ✅ Delete Account Section -->
+    <h2>Delete Your Account</h2>
+    <form action="/account/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+        <button type="submit" style="color: red;">Delete Account</button>
+    </form>
+</body>
+</html>
+

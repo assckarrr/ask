@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, <%= user.name %>!</h1>
+    <p>Your email: <%= user.email %></p>
+    <a href="/logout">Logout</a>
+    
+    <h2>Update Profile</h2>
+    <form action="/update-profile" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= user.name %>" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="<%= user.email %>" required>
+        
+        <button type="submit">Update Profile</button>
+    </form>
+    
+    <h2>Change Password</h2>
+    <form action="/change-password" method="POST">
+        <label for="oldPassword">Current Password:</label>
+        <input type="password" id="oldPassword" name="oldPassword" required>
+        
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" name="newPassword" required>
+        
+        <button type="submit">Change Password</button>
+    </form>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, <%- user.name %>!</h1>
+    <p>Your email: <%- user.email %></p>
+    <a href="/logout">Logout</a>
+
+    <!-- ✅ Delete Account Section -->
+    <h2>Delete Your Account</h2>
+    <form action="/account/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+        <button type="submit" style="color: red;">Delete Account</button>
+    </form>
+</body>
+</html>
+
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Posts</title>
+</head>
+<body>
+    <h1>All Posts</h1>
+    <a href="/dashboard">Back to Dashboard</a>
+
+    <form action="/posts/add" method="POST">
+        <input type="text" name="title" placeholder="Title" required>
+        <textarea name="content" placeholder="Content" required></textarea>
+        <button type="submit">Add Post</button>
+    </form>
+
+    <ul>
+        <% posts.forEach(post => { %>
+            <li>
+                <h2><%= post.title %></h2>
+                <p><%= post.content %></p>
+                <a href="/posts/delete/<%= post._id %>">Delete</a>
+                <form action="/posts/edit/<%= post._id %>" method="POST">
+                    <input type="text" name="title" value="<%= post.title %>">
+                    <textarea name="content"><%= post.content %></textarea>
+                    <button type="submit">Update</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
+
