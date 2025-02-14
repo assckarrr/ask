@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import session from "express-session";
 import dotenv from "dotenv";
 import bcrypt from "bcrypt"; // Hash passwords
-import User from "./models/user.js"; // Import User model
+import User from "./models/User.js"; // Import User model
 import authRoutes from "./routes/auth.js"; // Correct Path
 
 dotenv.config();
